@@ -8,7 +8,7 @@ class CnblogsSpider(scrapy.Spider):
     ]
 
     def parse(self, response):
-        lines = response.xpath('//a[@class="titlelnk"]').extract()
+        lines = response.xpath('//a[@class="titlelnk"]/text()').extract()
         print (len(lines))
         for line in lines:
             print(line)
